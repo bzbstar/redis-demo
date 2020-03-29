@@ -1,0 +1,21 @@
+spring:
+  redis:
+    # 单机
+#    host: master136
+#    port: 6581
+    #    database: 0
+
+    # 集群
+    cluster:
+      nodes: master136:6379, master136:6380, master136:6386, master136:6385, master136:6382, master136:6383
+      max-redirects: 6
+    jedis:
+      pool:
+        max-active: 50 # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 20
+        min-idle: 2
+    timeout: 5000
+
+user:
+  name: bzb
+  password: 123456
